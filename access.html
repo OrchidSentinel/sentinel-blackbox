@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>SENTINEL // ACCESS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="matrix"></canvas>
+
+<main class="terminal-shell">
+  <section class="topbar">
+    <span>ACCESS LAYER</span>
+    <span>NODE 03</span>
+    <span class="danger">AUTH REQUIRED</span>
+  </section>
+
+  <section class="panel">
+    <h1>ACCESS BREACH</h1>
+    <p class="sub">First layer authentication bypass</p>
+
+    <p>
+      Der äußere Zugang wurde erreicht.<br>
+      Sentinel speichert interne Prüfpfade in numerischen Fragmenten.
+    </p>
+
+    <div class="data-box">
+      <p>NODE LOG:</p>
+      <p>[07] active</p>
+      <p>[04] ghost route</p>
+      <p>[01] mirror ping</p>
+      <p>[09] failed</p>
+    </div>
+
+    <p class="hint">
+      Die Reihenfolge aktiver Spuren ist wichtiger als die Menge.
+    </p>
+
+    <div class="input-line">
+      <span>access-key:</span>
+      <input id="pagePassword" placeholder="Passwort">
+      <button onclick="checkPassword('741','sentinel.html')">ENTER</button>
+    </div>
+
+    <p id="error"></p>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
