@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>SENTINEL // INTERNAL</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="matrix"></canvas>
+
+<main class="terminal-shell">
+  <section class="topbar">
+    <span>INTERNAL SENTINEL DATABASE</span>
+    <span>CLASSIFIED</span>
+    <span class="danger">BREACH CONFIRMED</span>
+  </section>
+
+  <section class="panel">
+    <h1>SENTINEL INTERNAL FILES</h1>
+    <p class="sub">Recovered from damaged index cluster</p>
+
+    <div class="file-grid">
+      <div class="file-card locked">
+        <h3>ORCHiD</h3>
+        <p>Externer Störfaktor. Zugriff nicht vollständig blockierbar.</p>
+      </div>
+
+      <div class="file-card">
+        <h3>BLACKBOX-77A</h3>
+        <p>Ursprung unbekannt. Verbindung zur Sentinel-Initiative bestätigt.</p>
+      </div>
+
+      <div class="file-card locked">
+        <h3>FIB-MIRROR</h3>
+        <p>Lokaler Behördenkontakt erkannt. Daten wurden bereits gespiegelt.</p>
+      </div>
+
+      <div class="file-card">
+        <h3>INITIATIVE</h3>
+        <p>Projektstatus: Aktiv. Standort: unter Beobachtung.</p>
+      </div>
+    </div>
+
+    <div class="data-box">
+      <p>FRAGMENT:</p>
+      <p>SENTINEL ist nicht die Spitze.</p>
+      <p>SENTINEL ist die Wand.</p>
+      <p>Dahinter liegt die Initiative.</p>
+    </div>
+
+    <p class="hint">
+      Gesucht wird nicht der Name der Organisation, sondern das Wort hinter der Wand.
+    </p>
+
+    <div class="input-line">
+      <span>decrypt-word:</span>
+      <input id="pagePassword" placeholder="Passwort">
+      <button onclick="checkPassword('initiative','initiative.html')">DECRYPT</button>
+    </div>
+
+    <p id="error"></p>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
