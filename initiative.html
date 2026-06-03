@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>SENTINEL INITIATIVE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="matrix"></canvas>
+
+<main class="terminal-shell">
+  <section class="topbar">
+    <span>SENTINEL INITIATIVE</span>
+    <span>RECOVERED DOSSIER</span>
+    <span class="danger">FIB LINK FOUND</span>
+  </section>
+
+  <section class="panel">
+    <h1>SENTINEL-INITIATIVE</h1>
+    <p class="sub">Nicht Organisation. Nicht Behörde. Kontrollstruktur.</p>
+
+    <p>
+      Die Sentinel-Initiative wurde nicht gegründet, um zu schützen.<br>
+      Sie wurde gegründet, um Abweichungen früh genug zu erkennen.
+    </p>
+
+    <div class="data-box">
+      <p>GEFUNDENE VERBINDUNGEN:</p>
+      <p>01 // Sentinel Hauptnetz</p>
+      <p>02 // ORCHiD Gegenbeobachtung</p>
+      <p>03 // FIB Datenkopie</p>
+      <p>04 // Lokale Aktenübergabe</p>
+    </div>
+
+    <p>
+      Ein interner Export wurde bereits an eine Behörde übergeben.<br>
+      Die Datei trägt keine Unterschrift.
+    </p>
+
+    <div class="data-box red">
+      <p>EXPORT-ID:</p>
+      <p>FIB-SI-031</p>
+      <p>STATUS: DELIVERED</p>
+      <p>RECIPIENT: UNKNOWN UNIT</p>
+    </div>
+
+    <p class="hint">
+      Nur die Export-ID öffnet den Behördenpfad.
+    </p>
+
+    <div class="input-line">
+      <span>export-id:</span>
+      <input id="pagePassword" placeholder="Passwort">
+      <button onclick="checkPassword('fib-si-031','fib.html')">OPEN</button>
+    </div>
+
+    <p id="error"></p>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
