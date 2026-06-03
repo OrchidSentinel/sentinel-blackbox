@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>SENTINEL // EXTERNAL GATE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="matrix"></canvas>
+
+  <main class="terminal-shell">
+    <section class="topbar">
+      <span>SENTINEL NETWORK</span>
+      <span>EXTERNAL NODE // UNKNOWN CONNECTION</span>
+      <span class="danger">TRACE: ACTIVE</span>
+    </section>
+
+    <section class="panel">
+      <h1>SENTINEL</h1>
+      <p class="sub">Restricted Infrastructure Gateway</p>
+
+      <div class="warning">
+        UNAUTHORIZED ACCESS DETECTED<br>
+        CONNECTION ROUTED THROUGH ORCHiD MASKING LAYER
+      </div>
+
+      <p>
+        Diese Verbindung wurde nicht genehmigt.<br>
+        Diese Verbindung wurde nicht blockiert.<br>
+        Diese Verbindung wird beobachtet.
+      </p>
+
+      <div class="input-line">
+        <span>root@external:~$</span>
+        <input id="terminalInput" autocomplete="off" placeholder="Befehl eingeben...">
+      </div>
+
+      <pre id="terminalOutput">
+Verfügbare Befehle:
+help
+scan
+login
+      </pre>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
