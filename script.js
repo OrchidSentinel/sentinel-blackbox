@@ -1,122 +1,17 @@
-const canvas = document.getElementById("matrix");
-if (canvas) {
-  const ctx = canvas.getContext("2d");
+const canvas=document.getElementById("matrix");
+if(canvas){const ctx=canvas.getContext("2d");let fontSize=14,columns,drops;const chars="01NEXUSSENTINELBLACKBOXSMOKEYROSEFOXWATCHING";function reset(){canvas.width=innerWidth;canvas.height=innerHeight;columns=Math.floor(canvas.width/fontSize);drops=Array(columns).fill(1)}function draw(){ctx.fillStyle="rgba(2,4,3,.085)";ctx.fillRect(0,0,canvas.width,canvas.height);ctx.fillStyle=Math.random()>.985?"#ff3b3b":"#18ff78";ctx.font=fontSize+"px monospace";for(let i=0;i<drops.length;i++){const text=chars[Math.floor(Math.random()*chars.length)];ctx.fillText(text,i*fontSize,drops[i]*fontSize);if(drops[i]*fontSize>canvas.height&&Math.random()>.974)drops[i]=0;drops[i]++}}reset();setInterval(draw,45);addEventListener("resize",reset)}
 
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+const terminalInput=document.getElementById("terminalInput");const terminalOutput=document.getElementById("terminalOutput");
+if(terminalInput&&terminalOutput){terminalInput.addEventListener("keydown",e=>{if(e.key==="Enter"){const cmd=terminalInput.value.trim().toLowerCase();terminalInput.value="";runCommand(cmd)}})}
+function runCommand(command){const out=terminalOutput;if(command==="observe"){out.textContent="Du hast verstanden, dass du nicht allein liest.\nRoute wird geöffnet.";setTimeout(()=>location.href="access.html",900);return}const replies={help:"NEXUS gibt keine Händchen.\nWer Hilfe tippt, wurde schon falsch erzogen.",scan:"SCAN ABGEBROCHEN.\nZu laut. Viel zu laut.\nEtwas hat zurückgescannt.",login:"LOGIN IST FÜR MENSCHEN MIT NAMEN.\nNEXUS hat keinen mehr.",sentinel:"Sentinel antwortet nicht.\nSentinel notiert.",nexus:"Nicht hier. Nicht so früh.",smokeys:"Rauch klebt an der Leitung.\nAber der erste Blick verlangt ein anderes Wort."};out.textContent=replies[command]||`UNKNOWN: ${command}\nDer Versuch wurde gespiegelt.\nDeine Hand war langsamer als die andere Maus.`;disturb()}
 
-  const chars = "01SENTINELORCHIDFIBINITIATIVE";
-  const fontSize = 14;
-  const columns = Math.floor(canvas.width / fontSize);
-  const drops = Array(columns).fill(1);
+document.querySelectorAll("button[data-key]").forEach(btn=>btn.addEventListener("click",()=>checkPassword(btn.dataset.key,btn.dataset.next)));document.addEventListener("keydown",e=>{if(e.key==="Enter"&&document.getElementById("pagePassword")){const btn=document.querySelector("button[data-key]");if(btn)checkPassword(btn.dataset.key,btn.dataset.next)}});
+function norm(v){return(v||"").trim().toLowerCase().replace(/\s+/g,"").replace(/-/g,"")}
+function checkPassword(correct,nextPage){const input=document.getElementById("pagePassword"),error=document.getElementById("error");if(!input)return;const v=norm(input.value),c=norm(correct);if(v===c){disturb("ACCEPTED // nicht sauber, aber drin");setTimeout(()=>location.href=nextPage,650)}else{if(error)error.textContent=randomDenied();input.value="";document.body.classList.add("shake");setTimeout(()=>document.body.classList.remove("shake"),500);disturb()}}
+function randomDenied(){return["ACCESS DENIED // du warst zu laut.","FALSCH // jemand hat mitgelesen.","DENIED // Sentinel hat deine Reihenfolge behalten.","NEIN // die zweite Maus war schneller.","UNSAUBER // NEXUS lacht nicht, aber fast."][Math.floor(Math.random()*5)]}
 
-  function drawMatrix() {
-    ctx.fillStyle = "rgba(2, 4, 3, 0.08)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+const phantom=document.getElementById("phantomCursor");function ghostMove(){if(!phantom)return;const x=Math.random()*(innerWidth-40)+20,y=Math.random()*(innerHeight-40)+20;phantom.style.transition="opacity .25s, transform 1.8s cubic-bezier(.2,.8,.2,1)";phantom.style.opacity=.85;phantom.style.transform=`translate(${x}px,${y}px) rotate(${Math.random()*18-9}deg)`;setTimeout(()=>{phantom.style.opacity=0},900+Math.random()*1300);setTimeout(ghostMove,5000+Math.random()*9000)}setTimeout(ghostMove,2200+Math.random()*3000);
+function disturb(text){const p=document.getElementById("panicText");if(!p)return;p.textContent=text||["NICHT ALLEIN","ZU NAH","HAND WEG","NEXUS SIEHT DEN FEHLER","SENTINEL HÖRT RAUCH"][Math.floor(Math.random()*5)];p.style.opacity=1;document.body.classList.add("flash");setTimeout(()=>{p.style.opacity=0;document.body.classList.remove("flash")},420)}
+setInterval(()=>{if(Math.random()>.68)disturb()},12000);
 
-    ctx.fillStyle = "#18ff78";
-    ctx.font = fontSize + "px monospace";
-
-    for (let i = 0; i < drops.length; i++) {
-      const text = chars[Math.floor(Math.random() * chars.length)];
-      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-        drops[i] = 0;
-      }
-
-      drops[i]++;
-    }
-  }
-
-  setInterval(drawMatrix, 45);
-
-  window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  });
-}
-
-const terminalInput = document.getElementById("terminalInput");
-const terminalOutput = document.getElementById("terminalOutput");
-
-if (terminalInput && terminalOutput) {
-  terminalInput.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-      const command = terminalInput.value.trim().toLowerCase();
-      terminalInput.value = "";
-      runCommand(command);
-    }
-  });
-}
-
-function runCommand(command) {
-  if (command === "help") {
-    terminalOutput.textContent =
-`Befehle:
-help        zeigt Befehle
-scan        sucht offene Sentinel-Pfade
-login       startet Zugriff
-orchid      prüft Maskierung
-fib         sucht Behördenkopien`;
-  } else if (command === "scan") {
-    terminalOutput.textContent =
-`SCAN COMPLETE.
-
-Gefundene Pfade:
-[01] /external
-[02] /access
-[03] /initiative
-[04] /fib_mirror
-
-Erster offener Zugriff:
-access.html`;
-  } else if (command === "login") {
-    terminalOutput.textContent =
-`LOGIN FAILED.
-Grund: Benutzer unbekannt.
-
-Alternative Route erkannt:
-ORCHiD-MASK-LAYER aktiv.
-
-Weiterleitung vorbereitet:
-Gib "access" ein.`;
-  } else if (command === "access") {
-    window.location.href = "access.html";
-  } else if (command === "orchid") {
-    terminalOutput.textContent =
-`ORCHiD LAYER ACTIVE.
-
-Du bist nicht unsichtbar.
-Du bist nur schwerer zu finden.`;
-  } else if (command === "fib") {
-    terminalOutput.textContent =
-`FIB MIRROR NODE: DETECTED.
-Zugriff verweigert.
-Vorherige Sentinel-Schicht erforderlich.`;
-  } else {
-    terminalOutput.textContent =
-`UNKNOWN COMMAND: ${command}
-
-Sentinel hat diesen Versuch protokolliert.`;
-  }
-}
-
-function checkPassword(correctPassword, nextPage) {
-  const input = document.getElementById("pagePassword");
-  const error = document.getElementById("error");
-
-  if (!input) return;
-
-  const value = input.value.trim().toLowerCase();
-
-  if (value === correctPassword.toLowerCase()) {
-    window.location.href = nextPage;
-  } else {
-    if (error) {
-      error.textContent = "ACCESS DENIED // Versuch wurde protokolliert.";
-    }
-
-    input.value = "";
-  }
-}
+let idle=0;setInterval(()=>{idle++;if(idle>3&&Math.random()>.45)disturb("DU STARST ZU LANGE")},7000);["mousemove","keydown","click"].forEach(ev=>addEventListener(ev,()=>idle=0));
