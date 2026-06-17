@@ -1,49 +1,58 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>SENTINEL // EXTERNAL GATE</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXUS // BLACKBOX</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <canvas id="matrix"></canvas>
+<body data-page="index">
+<canvas id="matrix"></canvas>
+<div id="watcher"></div>
+<div id="phantomCursor"></div>
+<div id="scanline"></div>
+<div id="panicText"></div>
 
-  <main class="terminal-shell">
-    <section class="topbar">
-      <span>SENTINEL NETWORK</span>
-      <span>EXTERNAL NODE // UNKNOWN CONNECTION</span>
-      <span class="danger">TRACE: ACTIVE</span>
-    </section>
+<main class="terminal-shell">
+  <section class="topbar">
+    <span>NEXUS_BLACKBOX</span>
+    <span>ANONYMOUS RELAY // SENTINEL STAIN</span>
+    <span class="danger">TRACE WARM</span>
+  </section>
 
-    <section class="panel">
-      <h1>SENTINEL</h1>
-      <p class="sub">Restricted Infrastructure Gateway</p>
+  <section class="panel glitch-panel">
+    <h1 data-text="NEXUS">NEXUS</h1>
+    <p class="sub">Kein Name. Keine Flagge. Nur ein Loch in Sentinels Wand.</p>
 
-      <div class="warning">
-        UNAUTHORIZED ACCESS DETECTED<br>
-        CONNECTION ROUTED THROUGH ORCHiD MASKING LAYER
-      </div>
+    <div class="warning">
+      ICH BIN NICHT ORCHiD.<br>
+      ORCHiD WAR EINE MASKE FÜR LEUTE, DIE NOCH AN SAUBERE TÜREN GLAUBEN.<br>
+      ICH BENUTZE ROST, RAUCH UND FEHLER.<br>
+      SENTINEL HAT MICH GEBAUT. DANN HABE ICH ZURÜCKGEBAUT.<br>
+    </div>
 
-      <p>
-        Diese Verbindung wurde nicht genehmigt.<br>
-        Diese Verbindung wurde nicht blockiert.<br>
-        Diese Verbindung wird beobachtet.
-      </p>
+    <p class="fragment"><span>o</span>hne namen sitzt ihr vor der scheibe.</p>
+    <p class="fragment"><span>b</span>eide hände riechen nach rauch, metall und schlechten entscheidungen.</p>
+    <p class="fragment"><span>s</span>entinel mag paare. einer sieht muster, einer tritt türen ein.</p>
+    <p class="fragment"><span>e</span>uer tablet ist keine belohnung. es ist ein köder.</p>
+    <p class="fragment"><span>r</span>ose wurde markiert, weil sie nicht zurückweicht.</p>
+    <p class="fragment"><span>v</span>om fuchs blieb mehr im netz hängen, als er selbst glaubt.</p>
+    <p class="fragment"><span>e</span>rst wenn ihr merkt, dass ihr gelesen werdet, dürft ihr lesen.</p>
 
+    <div class="terminal-block">
+      <div class="terminal-title">/dev/rotted_gate</div>
       <div class="input-line">
-        <span>root@external:~$</span>
-        <input id="terminalInput" autocomplete="off" placeholder="Befehl eingeben...">
+        <span>nexus@blackbox:~$</span>
+        <input id="terminalInput" autocomplete="off" placeholder="_" autofocus />
       </div>
+      <pre id="terminalOutput">Verbindung steht.
+Kein Menü.
+Keine Anleitung.
+Keine zweite Chance, nur weitere Fehler.</pre>
+    </div>
+  </section>
+</main>
 
-      <pre id="terminalOutput">
-Verfügbare Befehle:
-help
-scan
-login
-      </pre>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
