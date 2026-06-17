@@ -7,7 +7,7 @@ Content des **„Blackbox"-Tablets** — ein mehrseitiges Terminal-/Puzzle-Inter
 
 1. **Website** über GitHub Pages.
 2. **In-Game** als Tablet — eingebunden als Git-Submodule der Sammel-Resource
-   **`BIRP_Tablets`** (`OrchidSentinel/BIRP_Tablet`), die Rahmen, NUI-Focus,
+   **`BIRP_Tablet`** (`OrchidSentinel/BIRP_Tablet`), die Rahmen, NUI-Focus,
    Öffnen/Schließen und das ox_inventory-Item (`blackbox_tablet`) stellt.
 
 ## Seiten
@@ -32,7 +32,7 @@ index ──(Kommando "observe")──► access ──► sentinel ──► in
 
 ## Im Spiel
 
-Kein eigener Code nötig — `BIRP_Tablets` lädt `index.html` in den Tablet-Rahmen.
+Kein eigener Code nötig — `BIRP_Tablet` lädt `index.html` in den Tablet-Rahmen.
 Änderungen hier landen nach `git submodule update --remote` direkt im Spiel.
 Schließen: **ESC** oder **DISCONNECT**.
 
@@ -47,6 +47,6 @@ Damit es im Spiel-iframe **und** auf GitHub Pages funktioniert:
    `location.href` in `script.js` relativ halten.
 4. **Muss standalone im Browser laufen** — nicht auf die Hülle verlassen.
 5. **Kein `cfx-nui-<name>`** hartkodieren; falls je nötig: `GetParentResourceName()`.
-6. **Keine eigene Schließen-/Focus-Logik** — das macht `BIRP_Tablets`.
+6. **Keine eigene Schließen-/Focus-Logik** — das macht `BIRP_Tablet`.
 
 Gesamtarchitektur: siehe README von `OrchidSentinel/BIRP_Tablet`.
