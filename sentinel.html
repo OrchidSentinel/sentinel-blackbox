@@ -1,67 +1,39 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <title>SENTINEL // INTERNAL</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<canvas id="matrix"></canvas>
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>NEXUS // TARGET FILES</title><link rel="stylesheet" href="style.css" /></head>
+<body data-page="sentinel">
+<canvas id="matrix"></canvas><div id="watcher"></div><div id="phantomCursor"></div><div id="scanline"></div><div id="panicText"></div>
+<main class="terminal-shell wide">
+<section class="topbar"><span>SENTINEL INTERNAL ROT</span><span>RECOVERED BY NEXUS</span><span class="danger">SUBJECTS STILL BREATHING</span></section>
+<section class="panel">
+<h1 data-text="DOSSIER">DOSSIER</h1>
+<p class="sub">Zwei Akten. Ein Laden. Zu viele falsche Augen.</p>
 
-<main class="terminal-shell">
-  <section class="topbar">
-    <span>INTERNAL SENTINEL DATABASE</span>
-    <span>CLASSIFIED</span>
-    <span class="danger">BREACH CONFIRMED</span>
-  </section>
+<div class="dossier">
+<h2>AKTE // ROSE WHITE</h2>
+<p><b>Status:</b> Story-Trägerin im MC-Kontext. Direkt. Furchtlos. Schwer zu schieben, leicht zu entzünden.</p>
+<p><b>Neigung:</b> Waffen, Fahrzeuge, Grenzerfahrungen, mystische Deutung von Zufällen.</p>
+<p><b>Risiko:</b> mental unruhig, impulsiv, aber nützlich, weil sie andere mitzieht statt allein zu glänzen.</p>
+<p><b>Sentinel-Vermerk:</b> Nicht brechen. Isolieren. Beobachten. Bei Widerstand <span class="redact">████████████</span>.</p>
+<p class="burn">ELIMINATION STATUS: <span class="redact">████████</span> // GRUND: ZU SICHTBAR FÜR EINE LEISE LÖSUNG</p>
+</div>
 
-  <section class="panel">
-    <h1>SENTINEL INTERNAL FILES</h1>
-    <p class="sub">Recovered from damaged index cluster</p>
+<div class="dossier">
+<h2>AKTE // RAPHAEL FUCHSSTADT</h2>
+<p><b>Status:</b> Langzeitakte. Zivilbeginn, organisierte Phasen, DVM-Vergangenheit, BMC-Gegenwart.</p>
+<p><b>Neigung:</b> Systeme öffnen, Türen umgehen, Technik aus toten Dingen ziehen.</p>
+<p><b>Historie:</b> Cyborg-Material begleitet, Teile entfernt, Abläufe verstanden, Spuren nicht vollständig entfernt.</p>
+<p><b>Sentinel-Vermerk:</b> Kontakt mit administrativem Schatten-RP erhöht seine Nutzbarkeit und sein Entfernungsrisiko.</p>
+<p class="burn">ELIMINATION STATUS: VORBEREITET // AUSLÖSER: <span class="redact">████████████████████</span></p>
+</div>
 
-    <div class="file-grid">
-      <div class="file-card locked">
-        <h3>ORCHiD</h3>
-        <p>Externer Störfaktor. Zugriff nicht vollständig blockierbar.</p>
-      </div>
+<div class="data-box red">
+<p>SHOP LINK:</p>
+<p>Der Ort riecht harmlos, weil Rauch alles gleich macht.</p>
+<p>Aber Sentinel katalogisiert keine Ware. Sentinel katalogisiert Treffpunkte.</p>
+<p>Sucht nicht die Person. Sucht den Laden, der beide in dieselbe Zeile zwingt.</p>
+</div>
 
-      <div class="file-card">
-        <h3>BLACKBOX-77A</h3>
-        <p>Ursprung unbekannt. Verbindung zur Sentinel-Initiative bestätigt.</p>
-      </div>
-
-      <div class="file-card locked">
-        <h3>FIB-MIRROR</h3>
-        <p>Lokaler Behördenkontakt erkannt. Daten wurden bereits gespiegelt.</p>
-      </div>
-
-      <div class="file-card">
-        <h3>INITIATIVE</h3>
-        <p>Projektstatus: Aktiv. Standort: unter Beobachtung.</p>
-      </div>
-    </div>
-
-    <div class="data-box">
-      <p>FRAGMENT:</p>
-      <p>SENTINEL ist nicht die Spitze.</p>
-      <p>SENTINEL ist die Wand.</p>
-      <p>Dahinter liegt die Initiative.</p>
-    </div>
-
-    <p class="hint">
-      Gesucht wird nicht der Name der Organisation, sondern das Wort hinter der Wand.
-    </p>
-
-    <div class="input-line">
-      <span>decrypt-word:</span>
-      <input id="pagePassword" placeholder="Passwort">
-      <button onclick="checkPassword('initiative','initiative.html')">DECRYPT</button>
-    </div>
-
-    <p id="error"></p>
-  </section>
-</main>
-
-<script src="script.js"></script>
-</body>
-</html>
+<div class="input-line"><span>common-ground:</span><input id="pagePassword" placeholder="_"><button data-next="initiative.html" data-key="smokeys">UNSEAL</button></div>
+<p id="error"></p>
+</section></main><script src="script.js"></script></body></html>
